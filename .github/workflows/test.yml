@@ -1,0 +1,27 @@
+name: test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    container: ros:jazzy
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup and Run     
+        run: |
+          apt-get update
+          apt-get install -y python3-tk xvfb
+
+          mkdir -p ~/ros2_ws/src/robosyshw2
+          cp -r . ~/ros2_ws/src/robosyshw2/
+          
+          cd ~/ros2_ws
+          rosdep update
+          rosdep install -i --from-path src --rosdistro jazzy -y
+
+          xvfb-run bash -c "
+            source /opt/ros/jazzy/setup.bash
+            colcon build
+            source install/setup.bash
+            chmod +x src/robosyshw2/robosyshw2/test/test.bash
+            ./src/robosyshw2/robosyshw2/test/test.bash ~/ros2_ws
+          "
