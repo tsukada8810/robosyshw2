@@ -23,5 +23,5 @@ jobs:
             colcon build
             source install/setup.bash
             chmod +x src/robosyshw2/robosyshw2/test/test.bash
-            ./src/robosyshw2/robosyshw2/test/test.bash ~/ros2_ws
+            ./src/robosyshw2/robosyshw2/test/test.bash
           "
