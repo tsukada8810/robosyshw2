@@ -10,27 +10,33 @@ class MousePub(Node):
     def __init__(self):
         super().__init__('mouse_publisher')
         self.pub = self.create_publisher(Point, 'mouse_pos', 10)
-        self.root = tk.Tk()
-        self.root.geometry("300x300")
-        self.root.bind('<Motion>', self.cb)
-        self.create_timer(0.01, self.update_gui)
-
-    def cb(self, event):
-        msg = Point()
-        msg.x, msg.y = float(event.x), float(event.y)
-        self.pub.publish(msg)
-
-    def update_gui(self):
-        self.root.update_idletasks()
-        self.root.update()
 
 def main():
     rclpy.init()
+    node = MousePub()
+
+    root = tk.Tk()
+    root.title("Mouse Tracker")
+    root.geometry("500x500")
+
+    def on_motion(event):
+        msg = Point()
+        msg.x = float(event.x)
+        msg.y = float(event.y)
+        node.pub.publish(msg)
+
+    def on_close():
+        root.destroy()
+        node.destroy_node()
+        rclpy.shutdown()
+
+    root.bind('<Motion>', on_motion)
+    root.protocol("WM_DELETE_WINDOW", on_close)
+
     try:
-        rclpy.spin(MousePub())
+        root.mainloop()
     except KeyboardInterrupt:
-        pass
-    rclpy.shutdown()
+        on_close()
 
 if __name__ == '__main__':
     main()
