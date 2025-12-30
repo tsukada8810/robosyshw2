@@ -13,15 +13,11 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='tsukada8810',
+    maintainer='Hayato Tsukada',
     maintainer_email='szhongtain85@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    description='A package for mouse position tracking and distance calculation',
+    license='BSD-3-Clause',
+    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'position = robosyshw2.position:main',

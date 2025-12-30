@@ -3,8 +3,8 @@
 <package format="3">
   <name>robosyshw2</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="szhongtain85@gmail.com">tsukada8810</maintainer>
+  <description>A package for mouse position tracking and distance calculation</description>
+  <maintainer email="szhongtain85@gmail.com">Hayato Tsukada</maintainer>
   <license>BSD-3-Clause</license>
 
   <depend>rclpy</depend>
@@ -14,7 +14,7 @@
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
   <test_depend>python3-pytest</test_depend>
- 
+
   <export>
     <build_type>ament_python</build_type>
   </export>
