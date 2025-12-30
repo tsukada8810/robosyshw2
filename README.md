@@ -23,11 +23,18 @@ ROS2を用いて画面上のマウスの座標を出力するパッケージ
 ```bash
 $ ros2 run robosyshw2 position
 ```
-- ノード２：送信ノード
+- ノード２：受信ノード
 ```bash
 $ ros2 run robosyshw2 distance
 ```
-実行したら、PC画面上に白い画面が出てくるのでその画面内にマウスカーソルをあてたら白い画面の左上を(0, 0)とするカーソルの座標が出力される。
+
+## 実行結果(例)
+- ノード２で起動した白いウィンドウ上でマウスを動かすと、ノード１に以下のようなログが出力される
+```Plaintext
+[INFO] [1735626883.371470528] [distance_subscriber]: Position: X=100, Y=200
+[INFO] [1735626884.047770986] [distance_subscriber]: Position: X=150, Y=100
+...
+```
 
 ## 参考文献
 - https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025
