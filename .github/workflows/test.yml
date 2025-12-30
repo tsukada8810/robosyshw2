@@ -18,10 +18,12 @@ jobs:
           rosdep update
           rosdep install -i --from-path src --rosdistro jazzy -y
 
-          xvfb-run bash -c "
+          xvfb-run bash -x -c "
+           
             source /opt/ros/jazzy/setup.bash
             colcon build
             source install/setup.bash
-            chmod +x src/robosyshw2/robosyshw2/test/test.bash
-            ./src/robosyshw2/robosyshw2/test/test.bash
-          "
+            find src -name test.bash -exec chmod +x {} \;
+            find src -name test.bash -exec bash -x {} \;
+           
+            "
