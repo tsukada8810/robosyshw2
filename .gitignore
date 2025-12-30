@@ -1,1 +1,7 @@
 __pycache__/
+build/
+install/
+log/
+robosyshw2/build/
+robosyshw2/install/
+robosyshw2/log/
