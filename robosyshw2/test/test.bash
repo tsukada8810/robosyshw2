@@ -9,9 +9,8 @@ cd $dir/ros2_ws
 colcon build
 source install/setup.bash
 
-ros2 run robosyshw2 distance > /tmp/mypkg.log 2>&1 &
-PID=$!
-sleep 5
+timeout 10 ros2 run robosyshw2 distance > /tmp/robosyshw2.log &
+sleep 2
 
 ros2 topic pub --once /mouse_pos geometry_msgs/msg/Point "{x: 10.0, y: 20.0, z: 0.0}"
 sleep 10
