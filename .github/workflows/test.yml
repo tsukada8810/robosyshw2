@@ -9,7 +9,7 @@ jobs:
       - name: Setup and Run     
         run: |
           apt-get update
-          apt-get install -y python3-tk xvfb
+          apt-get install -y python3-tk xvfb python3-pynput
 
           mkdir -p ~/ros2_ws/src/robosyshw2
           cp -r . ~/ros2_ws/src/robosyshw2/
