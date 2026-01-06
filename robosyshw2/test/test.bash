@@ -13,9 +13,10 @@ ros2 run robosyshw2 distance > /tmp/mypkg.log 2>&1 &
 PID=$!
 sleep 5
 
-send_data(){
-    ros2 topic pub --once /mouse_pos geometry_msgs/msg/Point "{x: $1, y:$2, z: 0.0}" > /dev/null 2>&1
-}
+ros2 topic pub --once /mouse_pos geometry_msgs/msg/Point "{x: 10.0, y: 20.0, z: 0.0}"
+sleep 2
+
+
 
 send_data 10.0 20.0
 check_log "Position: X=10, Y=20"
