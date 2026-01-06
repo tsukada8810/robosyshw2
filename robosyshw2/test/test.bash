@@ -7,11 +7,7 @@ dir=~
 
 cd $dir/ros2_ws
 colcon build
-source $dir/ros2_ws/install/setup.bash
-
-rm -f /tmp/mypkg.log
-
-export PYTHONUNBUFFERED=1
+source install/setup.bash
 
 ros2 run robosyshw2 distance > /tmp/mypkg.log 2>&1 &
 NODE_PID=$!
