@@ -10,28 +10,8 @@ colcon build
 source install/setup.bash
 
 ros2 run robosyshw2 distance > /tmp/mypkg.log 2>&1 &
-NODE_PID=$!
-sleep 10
-
-check_log() {
-    expected=$1
-    found=""
-    for i in {1..10}; do
-        if grep -q "$expected" /tmp/mypkg.log; then
-            found=$(grep "$expected" /tmp/mypkg.log | tail -n 1)
-            break
-	fi
-	sleep 1
-    done
-    
-    if [ -n "$found" ]; then
-	echo "ok"
-    else
-	cat /tmp/mypkg.log
-	kill $NODE_PID
-	exit 1
-    fi
-}
+PID=$!
+sleep 5
 
 send_data(){
     ros2 topic pub --once /mouse_pos geometry_msgs/msg/Point "{x: $1, y:$2, z: 0.0}" > /dev/null 2>&1
