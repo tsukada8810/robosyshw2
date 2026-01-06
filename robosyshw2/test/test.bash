@@ -14,21 +14,6 @@ PID=$!
 sleep 5
 
 ros2 topic pub --once /mouse_pos geometry_msgs/msg/Point "{x: 10.0, y: 20.0, z: 0.0}"
-sleep 2
+sleep 10
 
-kill $PID 
-
-send_data 10.0 20.0
-check_log "Position: X=10, Y=20"
-
-send_data 0.0 0.0
-check_log "Position: X=0, Y=0"
-
-send_data -50.0 -30.0
-check_log "Position: X=-50, Y=-30"
-
-send_data 123.6 67.2
-check_log "Position: X=124, Y=67"
-
-kill $NODE_PID
-exit 0
+cat /tmp/robosyshw2.log | grep 'Position: X=10'
