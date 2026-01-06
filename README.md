@@ -41,4 +41,4 @@ $ ros2 run robosyshw2 distance
 
 ## ライセンス
 - このソフトウェアパッケージは、3条項BSDライセンスの下、再配布及び使用が許可されます。
-- (c) 2025 Hayato Tsukada
+- © 2025 Hayato Tsukada
