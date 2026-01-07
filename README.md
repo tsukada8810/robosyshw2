@@ -34,6 +34,17 @@ $ ros2 run robosyshw2 distance
 [INFO] [1735626884.047770986] [distance_subscriber]: Position: X=150, Y=100
 ...
 ```
+## 動作確認環境について
+### Ubuntu
+実行後画面全体からマウスの座標を取得できる
+
+### Windows (WSL2)
+WSLなどの仮想環境などでは座標を取得できない可能性がある
+その場合には３つ目の端末で以下のコマンドで仮想ウィンドウを起動し、そのウィンドウ上でマウスを動かすことで座標を取得することができる
+- ノード３：仮想ウィンドウ用ノード
+```bash
+$ rqt
+```
 
 ## 参考文献
 - https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025
