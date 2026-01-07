@@ -10,6 +10,12 @@
 - Ubuntu 24.04 LTS
 - ROS 2 Jazzy
 
+## 必要なライブラリ
+このパッケージでは`pynput`を使用するため以下のコマンドでインストールする
+```bash
+sudo apt install python3-pynput
+```
+
 ## ノードとトピックの構成
 #### position (送信ノード)
 - PC画面全体に対するマウスカーソルの座標を取得し、トピック`/mouse_pos`に対して`geometry_msgs/msg/Point`型でパブリッシュする
