@@ -45,6 +45,8 @@ $ ros2 run robosyshw2 distance
 - その場合には３つ目の端末で以下のコマンドで仮想ウィンドウを起動し、そのウィンドウ上でマウスを動かすことで座標を取得することができる
 - ノード３：仮想ウィンドウ用ノード
 ```bash
+$ conda deactivate
+$ source ~/ros2_ws/install/setup.bash 
 $ rqt
 ```
 
