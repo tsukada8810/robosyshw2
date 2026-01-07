@@ -4,7 +4,7 @@
 
 [![test](https://github.com/tsukada8810/robosyshw2/actions/workflows/test.yml/badge.svg)](https://github.com/tsukada8810/robosyshw2/actions/workflows/test.yml)
 
-画面上のマウス座標を取得するノードと、原点からの距離を計算するノードを提供するROS 2パッケージ
+画面上のマウス座標を取得するノードを提供するROS 2パッケージ
 
 ## 実行環境
 - Ubuntu 24.04 LTS
